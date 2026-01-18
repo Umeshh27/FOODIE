@@ -24,7 +24,6 @@ const signUp = async (req,res) => {
     mobile,
     password:hashedPassword
   })
-  
 }
   catch(error){
 
