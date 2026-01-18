@@ -38,9 +38,7 @@ export const signUp = async (req,res) => {
 
 }
   catch(error){
-    
-  return res.status(500).json(`Signup Error.`)
-
+  return res.status(500).json(`SignUp Error ${error}.`)
   }
 }
 
@@ -67,12 +65,19 @@ export const signIn = async (req,res) => {
     httpOnly:true
   })
 
-  return res.status(201).json(user)
+  return res.status(200).json(user)
 
 }
   catch(error){
-    
-  return res.status(500).json(`Signup Error.`)
+  return res.status(500).json(`SignIn Error ${error}.`)
+  }
+}
 
+export const signOut= async (req,res) =>{
+  try {
+    res.clearCookie("token")
+    return res.status(200).json({message:"Log Out Successfully."})
+  } catch (error) {
+     return res.status(500).json(`SignOut Error ${error}.`)
   }
 }
