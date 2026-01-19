@@ -39,8 +39,9 @@ function SignUp() {
           <label htmlFor="password" className='block text-gray-700 front-medium mb-1'>Password</label>
           <div className='relative'>
             <input type="password" name="" id="" className='w-full border rounded-lg px-3 py-2 focus:outline-none'  placeholder='Enter Your Password' style={{border:`1px solid ${borderColor}`}}/>
+
+            <button className='absolute right-3 top-3 text-gray-500'>{!showPassword?<FaEye />:<FaEyeSlash />}</button>
           </div>
-          <button>{!showPassword?<FaEye />:<FaEyeSlash />}</button>
         </div>
       </div>
     </div>
