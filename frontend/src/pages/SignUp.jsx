@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 function SignUp() {
   const primaryColor='#ff4d2d';
   const hoverColor='#e64323';
   const bgColor='#fff9f6';
   const borderColor='#ddd';
+  const [showPassword,setShowPassword]=useState(false);
   return (
     <>
     <div className='min-h-screen w-full flex items-center justify-center p-4' style={{background:bgColor}}>
@@ -34,9 +37,10 @@ function SignUp() {
            {/* Password  */}
         <div className='mb-4'>
           <label htmlFor="password" className='block text-gray-700 front-medium mb-1'>Password</label>
-          <div>
+          <div className='relative'>
             <input type="password" name="" id="" className='w-full border rounded-lg px-3 py-2 focus:outline-none'  placeholder='Enter Your Password' style={{border:`1px solid ${borderColor}`}}/>
           </div>
+          <button>{!showPassword?<FaEye />:<FaEyeSlash />}</button>
         </div>
       </div>
     </div>
